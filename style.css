@@ -1,524 +1,257 @@
 /* =========================
-   1. إعدادات عامة
+   تصميم هادئ: عاجي وأخضر
 ========================= */
 
 :root {
-    --bg: #0b1120;
-    --surface: #131d30;
-    --surface-light: #1b2940;
-    --text: #f1f5f9;
-    --muted: #b7c3d6;
-    --primary: #a78bfa;
-    --secondary: #22d3ee;
-    --border: rgba(255, 255, 255, 0.12);
-    --shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    --bg: #f7f6f2;
+    --surface: #ffffff;
+    --surface-light: #eef3ee;
+    --text: #303a35;
+    --muted: #68746d;
+    --primary: #668574;
+    --secondary: #8ca995;
+    --border: #e1e7e1;
+    --shadow: 0 8px 25px rgba(45, 65, 50, 0.08);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* إعدادات الصفحة */
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
 }
 
 body {
-    font-family: Arial, Tahoma, sans-serif;
     background: var(--bg);
     color: var(--text);
+    font-family: Arial, Tahoma, sans-serif;
     line-height: 1.8;
-    min-height: 100vh;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button {
-    font: inherit;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-.container {
-    width: min(1120px, 90%);
-    margin-inline: auto;
-}
-
-/* =========================
-   2. شريط التنقل
-========================= */
+/* شريط التنقل */
 
 header,
 .navbar {
-    background: rgba(11, 17, 32, 0.95);
+    background: rgba(255, 255, 255, 0.97);
 }
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(12px);
-}
-
-.navbar {
-    min-height: 78px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 14px 5%;
+    box-shadow: 0 2px 12px rgba(45, 65, 50, 0.04);
 }
 
 .logo {
-    color: var(--text);
-    font-size: 25px;
-    font-weight: 800;
-    white-space: nowrap;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    color: #405b4b;
 }
 
 nav a {
-    color: var(--muted);
-    font-size: 15px;
+    color: #59675e;
     transition: color 0.25s ease;
 }
 
 nav a:hover,
 nav a.active {
-    color: var(--secondary);
+    color: #668574;
 }
 
 #langBtn {
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--primary);
-    border-radius: 10px;
+    color: #405b4b;
+    background: #ffffff;
+    border: 1px solid #b9cbbd;
+    border-radius: 9px;
     padding: 9px 17px;
     cursor: pointer;
     transition: 0.25s;
-    white-space: nowrap;
 }
 
 #langBtn:hover {
-    background: var(--primary);
-    color: #111827;
+    background: #668574;
+    color: #ffffff;
 }
 
-/* =========================
-   3. القسم الرئيسي
-========================= */
+/* القسم الرئيسي */
 
 .hero {
-    min-height: 570px;
-    display: flex;
-    align-items: center;
-    padding: 75px 0;
     background:
         radial-gradient(
-            circle at 15% 25%,
-            rgba(139, 92, 246, 0.18),
-            transparent 35%
+            circle at 10% 20%,
+            rgba(220, 231, 220, 0.65),
+            transparent 40%
         ),
-        radial-gradient(
-            circle at 85% 70%,
-            rgba(34, 211, 238, 0.10),
-            transparent 35%
+        linear-gradient(
+            135deg,
+            #fbfaf7,
+            #f0f5ef
         );
 }
 
-.hero .container {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
-    gap: 60px;
-}
-
-.hero-content {
-    max-width: 650px;
-}
-
-.hero-content .subtitle {
-    color: var(--secondary);
-    font-size: 17px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
 .hero h1 {
-    color: var(--text);
-    font-size: clamp(32px, 4vw, 50px);
+    color: #354b3d;
     line-height: 1.5;
-    margin-bottom: 20px;
 }
 
 .hero p {
-    color: var(--muted);
-    font-size: 17px;
-    margin-bottom: 28px;
+    color: #68746d;
+}
+
+.hero-content .subtitle {
+    color: #668574;
 }
 
 .hero-image {
-    min-height: 290px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: linear-gradient(
-        135deg,
-        rgba(139, 92, 246, 0.25),
-        rgba(34, 211, 238, 0.10)
+        145deg,
+        #ffffff,
+        #edf3ed
     );
-    border: 1px solid var(--border);
-    border-radius: 28px;
-    padding: 35px;
+    border: 1px solid #dfe8df;
+    border-radius: 24px;
     box-shadow: var(--shadow);
-}
-
-.hero-image img {
-    width: 100%;
-    max-height: 350px;
-    object-fit: contain;
-    border-radius: 20px;
 }
 
 .hero-image h2 {
-    color: var(--text);
-    font-size: 32px;
-    text-align: center;
+    color: #405b4b;
 }
 
 .hero-image p {
-    color: var(--secondary);
-    text-align: center;
-    margin-top: 10px;
+    color: #668574;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 25px;
-}
-
-/* =========================
-   4. الأزرار
-========================= */
+/* الأزرار */
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 25px;
-    border-radius: 12px;
-    font-weight: bold;
-    border: 1px solid transparent;
-    transition: transform 0.25s, background 0.25s;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
+    border-radius: 10px;
+    transition: 0.25s ease;
 }
 
 .btn-primary {
-    color: #111827;
-    background: linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-    );
+    background: #668574;
+    color: #ffffff;
+    border: 1px solid #668574;
+}
+
+.btn-primary:hover {
+    background: #526f5e;
+    transform: translateY(-2px);
 }
 
 .btn-outline {
-    color: var(--text);
-    border-color: var(--primary);
     background: transparent;
+    color: #526f5e;
+    border: 1px solid #9cb4a2;
 }
 
 .btn-outline:hover {
-    background: rgba(167, 139, 250, 0.12);
+    background: #eaf1eb;
 }
 
-/* =========================
-   5. الأقسام العامة
-========================= */
-
-section:not(.hero) {
-    padding: 80px 0;
-}
+/* عناوين الأقسام */
 
 .section-title {
-    text-align: center;
-    font-size: 34px;
-    margin-bottom: 15px;
-    color: var(--text);
+    color: #354b3d;
 }
 
 .section-description {
-    max-width: 700px;
-    margin: 0 auto 40px;
-    text-align: center;
-    color: var(--muted);
+    color: #68746d;
 }
 
-/* =========================
-   6. المهارات
-========================= */
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
+/* بطاقات المهارات */
 
 .skill-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 28px 22px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--primary);
-    box-shadow: var(--shadow);
+    background: #ffffff;
+    border: 1px solid #e1e7e1;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(45, 65, 50, 0.04);
+    transition: 0.25s ease;
 }
 
 .skill-card h3 {
-    color: var(--secondary);
-    margin-bottom: 10px;
-    font-size: 21px;
+    color: #668574;
 }
 
 .skill-card p {
-    color: var(--muted);
+    color: #68746d;
 }
 
-/* =========================
-   7. المشروعات
-========================= */
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
-}
-
-.project-card {
-    display: flex;
-    flex-direction: column;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 25px;
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--secondary);
+.skill-card:hover {
+    transform: translateY(-4px);
+    border-color: #a9c0ae;
     box-shadow: var(--shadow);
 }
 
+/* بطاقات المشروعات */
+
+.project-card {
+    background: #ffffff;
+    border: 1px solid #e1e7e1;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(45, 65, 50, 0.04);
+    transition: 0.25s ease;
+}
+
 .project-card h3 {
-    color: var(--primary);
-    font-size: 22px;
-    margin-bottom: 12px;
+    color: #526f5e;
 }
 
 .project-card p {
-    color: var(--muted);
-    margin-bottom: 20px;
-    flex-grow: 1;
+    color: #68746d;
 }
 
 .project-card a {
-    align-self: flex-start;
-    color: var(--secondary);
+    color: #52775f;
     font-weight: bold;
 }
 
-.project-card a:hover {
-    text-decoration: underline;
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: #a9c0ae;
+    box-shadow: var(--shadow);
 }
 
-/* =========================
-   8. التواصل
-========================= */
+/* قسم التواصل */
 
 #contact {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-}
-
-.contact-content {
-    max-width: 700px;
-    margin: auto;
-    text-align: center;
+    background: #edf2ec;
+    border-top: 1px solid #e1e7e1;
 }
 
 .contact-content p {
-    color: var(--muted);
-    margin: 15px 0 25px;
+    color: #68746d;
 }
 
-/* =========================
-   9. التذييل
-========================= */
+/* نهاية الصفحة */
 
 footer {
-    text-align: center;
-    padding: 25px 15px;
-    background: #070c17;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
+    background: #e5ebe4;
+    color: #59675e;
+    border-top: 1px solid #d8e1d7;
 }
 
-/* =========================
-   10. دعم العربية والإنجليزية
-========================= */
+/* تحديد لون النصوص في الروابط */
 
-html[dir="rtl"] body {
-    text-align: right;
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #668574;
+    outline-offset: 4px;
 }
 
-html[dir="ltr"] body {
-    text-align: left;
-}
-
-html[dir="rtl"] .hero-buttons {
-    justify-content: flex-start;
-}
-
-html[dir="ltr"] .hero-buttons {
-    justify-content: flex-start;
-}
-
-/* =========================
-   11. الشاشات المتوسطة
-========================= */
-
-@media (max-width: 900px) {
-    .navbar {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav {
-        gap: 15px;
-    }
-
-    .hero .container {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .hero-image {
-        min-height: 230px;
-        max-width: 550px;
-        width: 100%;
-        margin-inline: auto;
-    }
-
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* =========================
-   12. الهواتف
-========================= */
+/* الهواتف */
 
 @media (max-width: 600px) {
-    .container {
-        width: 92%;
-    }
-
     .navbar {
-        gap: 14px;
-        padding: 15px 4%;
-    }
-
-    .logo {
-        font-size: 22px;
-    }
-
-    nav {
-        gap: 10px 16px;
-    }
-
-    nav a {
-        font-size: 13px;
-    }
-
-    #langBtn {
-        padding: 7px 12px;
-        font-size: 13px;
+        background: #ffffff;
     }
 
     .hero {
-        min-height: auto;
-        padding: 55px 0;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 15px;
+        padding-top: 45px;
+        padding-bottom: 45px;
     }
 
     .hero-image {
-        min-height: 190px;
-        padding: 22px;
-    }
-
-    section:not(.hero) {
-        padding: 55px 0;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
-
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
+        border-radius: 18px;
     }
 
     .skill-card,
     .project-card {
-        padding: 23px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn {
-        width: 100%;
+        border-radius: 14px;
     }
 }
