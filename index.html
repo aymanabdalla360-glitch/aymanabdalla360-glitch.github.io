@@ -1,373 +1,97 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Ayman Radwan - Web Developer Portfolio">
-
-    <meta name="theme-color" content="#f8faf7">
-
-    <title>Ayman Radwan | Web Developer</title>
-
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="المعرض الشخصي لأيمن رضوان - مطور ويب مهتم ببناء مواقع وتجارب رقمية واضحة وسهلة الاستخدام.">
+  <meta name="theme-color" content="#f8faf7">
+  <meta property="og:title" content="Ayman Radwan | Web Developer">
+  <meta property="og:description" content="Portfolio of Ayman Radwan, Web Developer.">
+  <meta property="og:type" content="website">
+  <title>Ayman Radwan | Web Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-
-    <!-- شريط التنقل -->
-    <header class="navbar">
-
-        <a href="#home" class="logo">Ayman<span>.</span></a>
-
-        <nav>
-            <a href="#home"
-               data-ar="الرئيسية"
-               data-en="Home">الرئيسية</a>
-
-            <a href="#about"
-               data-ar="من أنا"
-               data-en="About">من أنا</a>
-
-            <a href="#skills"
-               data-ar="مهاراتي"
-               data-en="Skills">مهاراتي</a>
-
-            <a href="#projects"
-               data-ar="مشروعاتي"
-               data-en="Projects">مشروعاتي</a>
-
-            <a href="#contact"
-               data-ar="تواصل معي"
-               data-en="Contact">تواصل معي</a>
-        </nav>
-
-        <button id="langBtn" type="button">English</button>
-
-    </header>
-
-    <main>
-
-        <!-- القسم الرئيسي -->
-        <section id="home" class="hero">
-
-            <div class="hero-content">
-
-                <p class="eyebrow"
-                   data-ar="مرحبًا، أنا أيمن رضوان"
-                   data-en="HELLO, I'M AYMAN RADWAN">
-                    مرحبًا، أنا أيمن رضوان
-                </p>
-
-                <h1
-                    data-ar="أصمم مواقع ويب عصرية تلبي احتياجاتك"
-                    data-en="I Build Modern Websites That Meet Your Needs">
-                    أصمم مواقع ويب عصرية تلبي احتياجاتك
-                </h1>
-
-                <p class="hero-text"
-                   data-ar="مهتم بتطوير واجهات الويب باستخدام HTML وCSS وJavaScript، وبناء مشروعات عملية تساعد على حل المشكلات."
-                   data-en="Interested in building web interfaces with HTML, CSS and JavaScript, and creating practical projects that solve problems.">
-                    مهتم بتطوير واجهات الويب باستخدام HTML وCSS وJavaScript،
-                    وبناء مشروعات عملية تساعد على حل المشكلات.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#projects"
-                       class="btn primary"
-                       data-ar="شاهد مشروعاتي"
-                       data-en="View My Projects">
-                        شاهد مشروعاتي
-                    </a>
-
-                    <a href="#contact"
-                       class="btn secondary"
-                       data-ar="تواصل معي"
-                       data-en="Contact Me">
-                        تواصل معي
-                    </a>
-
-                </div>
-
-                <div class="skills-list">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                    <span>Flutter</span>
-                    <span>Python</span>
-                </div>
-
-            </div>
-
-            <div class="hero-visual" aria-hidden="true">
-
-                <div class="visual-card">
-
-                    <span class="visual-symbol">&lt;/&gt;</span>
-
-                    <h2>Build. Create. Improve.</h2>
-
-                    <p>HTML · CSS · JavaScript · Python</p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- من أنا -->
-        <section id="about" class="section">
-
-            <p class="eyebrow"
-               data-ar="نبذة تعريفية"
-               data-en="ABOUT ME">
-                نبذة تعريفية
-            </p>
-
-            <h2 data-ar="من أنا؟"
-                data-en="Who Am I?">
-                من أنا؟
-            </h2>
-
-            <p class="section-text"
-               data-ar="أنا أيمن رضوان، أعمل على تطوير مهاراتي في البرمجة وتصميم واجهات الويب. أركز على تطبيق ما أتعلمه من خلال مشروعات عملية، وأسعى إلى تقديم حلول واضحة وسهلة الاستخدام."
-               data-en="I'm Ayman Radwan, developing my programming and web interface skills. I focus on applying what I learn through practical projects and aim to create clear, user-friendly solutions.">
-                أنا أيمن رضوان، أعمل على تطوير مهاراتي في البرمجة
-                وتصميم واجهات الويب. أركز على تطبيق ما أتعلمه من خلال
-                مشروعات عملية، وأسعى إلى تقديم حلول واضحة وسهلة الاستخدام.
-            </p>
-
-        </section>
-
-        <!-- المهارات -->
-        <section id="skills" class="section skills-section">
-
-            <p class="eyebrow"
-               data-ar="التقنيات"
-               data-en="TECHNOLOGIES">
-                التقنيات
-            </p>
-
-            <h2 data-ar="مهاراتي التقنية"
-                data-en="My Technical Skills">
-                مهاراتي التقنية
-            </h2>
-
-            <div class="skill-grid">
-
-                <article class="skill-card">
-                    <h3>HTML5</h3>
-                    <p data-ar="بناء هيكل صفحات الويب"
-                       data-en="Structuring web pages">
-                        بناء هيكل صفحات الويب
-                    </p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>CSS3</h3>
-                    <p data-ar="تنسيق الصفحات وتصميم الواجهات"
-                       data-en="Styling pages and interfaces">
-                        تنسيق الصفحات وتصميم الواجهات
-                    </p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>JavaScript</h3>
-                    <p data-ar="إضافة التفاعل والوظائف"
-                       data-en="Adding interactions and functionality">
-                        إضافة التفاعل والوظائف
-                    </p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Flutter</h3>
-                    <p data-ar="التعرف على تطوير تطبيقات الهاتف"
-                       data-en="Learning mobile app development">
-                        التعرف على تطوير تطبيقات الهاتف
-                    </p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Python</h3>
-                    <p data-ar="كتابة البرامج والتعامل مع البيانات"
-                       data-en="Programming and working with data">
-                        كتابة البرامج والتعامل مع البيانات
-                    </p>
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- المشروعات -->
-        <section id="projects" class="section projects-section">
-
-            <p class="eyebrow"
-               data-ar="أعمالي"
-               data-en="MY WORK">
-                أعمالي
-            </p>
-
-            <h2 data-ar="مشروعاتي"
-                data-en="My Projects">
-                مشروعاتي
-            </h2>
-
-            <p class="section-text"
-               data-ar="تعرّف على بعض مشروعاتي البرمجية وافتح مستودعاتها للاطلاع على الملفات والكود."
-               data-en="Explore my coding projects and open their repositories to view the source files and code.">
-                تعرّف على بعض مشروعاتي البرمجية وافتح مستودعاتها
-                للاطلاع على الملفات والكود.
-            </p>
-
-            <div class="project-grid">
-
-                <!-- المشروع الأول -->
-                <article class="project-card">
-
-                    <div class="project-number">01</div>
-
-                    <h3 data-ar="نظام إدارة الطلاب"
-                        data-en="Student Management System">
-                        نظام إدارة الطلاب
-                    </h3>
-
-                    <p data-ar="مستودع مشروع لإدارة الطلاب. افتح الكود للتعرف على تفاصيل التنفيذ."
-                       data-en="A student management project repository. Open the source code to explore its implementation.">
-                        مستودع مشروع لإدارة الطلاب. افتح الكود للتعرف
-                        على تفاصيل التنفيذ.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>Flask</span>
-                        <span>Python</span>
-                        <span>HTML</span>
-                    </div>
-
-                    <a
-                        href="https://github.com/aymanabdalla360-glitch/flask-student-management"
-                        class="btn primary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-ar="عرض المشروع على GitHub"
-                        data-en="View Project on GitHub">
-                        عرض المشروع على GitHub
-                    </a>
-
-                </article>
-
-                <!-- المشروع الثاني -->
-                <article class="project-card">
-
-                    <div class="project-number">02</div>
-
-                    <h3 data-ar="مشروع Flask"
-                        data-en="Flask Project">
-                        مشروع Flask
-                    </h3>
-
-                    <p data-ar="مشروع برمجي باستخدام Flask. يمكنك زيارة المستودع للاطلاع على الملفات والتفاصيل."
-                       data-en="A project using Flask. Visit the repository to explore its files and details.">
-                        مشروع برمجي باستخدام Flask. يمكنك زيارة
-                        المستودع للاطلاع على الملفات والتفاصيل.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>Flask</span>
-                        <span>Python</span>
-                        <span>HTML</span>
-                    </div>
-
-                    <a
-                        href="https://github.com/aymanabdalla360-glitch/flask-project2"
-                        class="btn primary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-ar="عرض المشروع على GitHub"
-                        data-en="View Project on GitHub">
-                        عرض المشروع على GitHub
-                    </a>
-
-                </article>
-
-                <!-- المشروع الثالث -->
-                <article class="project-card">
-
-                    <div class="project-number">03</div>
-
-                    <h3 data-ar="مشروع تصميم موقع"
-                        data-en="Website Project">
-                        مشروع تصميم موقع
-                    </h3>
-
-                    <p data-ar="مستودع لمشروع ويب إضافي. افتح الملفات للتعرف على تصميم الموقع وطريقة بنائه."
-                       data-en="An additional web project repository. Open the files to explore its design and implementation.">
-                        مستودع لمشروع ويب إضافي. افتح الملفات
-                        للتعرف على تصميم الموقع وطريقة بنائه.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                    <a
-                        href="https://github.com/aymanabdalla360-glitch/my-website"
-                        class="btn primary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-ar="عرض المشروع على GitHub"
-                        data-en="View Project on GitHub">
-                        عرض المشروع على GitHub
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- التواصل -->
-        <section id="contact" class="section contact-section">
-
-            <p class="eyebrow"
-               data-ar="لنعمل معًا"
-               data-en="LET'S WORK TOGETHER">
-                لنعمل معًا
-            </p>
-
-            <h2 data-ar="هل لديك فرصة عمل؟"
-                data-en="Have a Job Opportunity?">
-                هل لديك فرصة عمل؟
-            </h2>
-
-            <p class="section-text"
-               data-ar="يسعدني الاطلاع على فرص العمل والتعاون في مشروعات تطوير الويب."
-               data-en="I'm interested in exploring job opportunities and collaborating on web development projects.">
-                يسعدني الاطلاع على فرص العمل والتعاون
-                في مشروعات تطوير الويب.
-            </p>
-
-            <p class="contact-note"
-               data-ar="سيتم إضافة بيانات التواصل هنا."
-               data-en="Contact details will be added here.">
-                سيتم إضافة بيانات التواصل هنا.
-            </p>
-
-        </section>
-
-    </main>
-
-    <!-- نهاية الموقع -->
-    <footer>
-        <p>© <span id="year"></span> Ayman Radwan</p>
-    </footer>
-
+  <a class="skip-link" href="#main" data-ar="انتقل إلى المحتوى" data-en="Skip to content">انتقل إلى المحتوى</a>
+  <header class="navbar">
+    <a href="#home" class="logo" aria-label="Ayman home">Ayman<span>.</span></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav"><span aria-hidden="true">☰</span><span class="sr-only" data-ar="فتح قائمة التنقل" data-en="Open navigation menu">فتح قائمة التنقل</span></button>
+    <nav id="mainNav" class="nav-links" aria-label="Main navigation">
+      <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="#about" data-ar="من أنا" data-en="About">من أنا</a>
+      <a href="#skills" data-ar="مهاراتي" data-en="Skills">مهاراتي</a>
+      <a href="#projects" data-ar="مشروعاتي" data-en="Projects">مشروعاتي</a>
+      <a href="#contact" data-ar="تواصل معي" data-en="Contact">تواصل معي</a>
+    </nav>
+    <button id="langBtn" class="language-button" type="button">English</button>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero section-wrap">
+      <div class="hero-content">
+        <p class="eyebrow" data-ar="مرحبًا، أنا أيمن رضوان" data-en="HELLO, I'M AYMAN RADWAN">مرحبًا، أنا أيمن رضوان</p>
+        <h1 data-ar="أبني مواقع ويب عصرية وواضحة وسهلة الاستخدام" data-en="I build modern, clear and user-friendly websites">أبني مواقع ويب عصرية وواضحة وسهلة الاستخدام</h1>
+        <p class="hero-text" data-ar="مطور ويب أعمل على تطوير مهاراتي في HTML وCSS وJavaScript، وأحوّل ما أتعلمه إلى مشروعات عملية. أستكشف أيضًا Python وFlask وFlutter." data-en="A web developer building practical projects with HTML, CSS and JavaScript. I also explore Python, Flask and Flutter.">مطور ويب أعمل على تطوير مهاراتي في HTML وCSS وJavaScript، وأحوّل ما أتعلمه إلى مشروعات عملية. أستكشف أيضًا Python وFlask وFlutter.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects" data-ar="استعرض مشروعاتي" data-en="Explore My Projects">استعرض مشروعاتي</a>
+          <a class="btn secondary" href="#contact" data-ar="تواصل معي" data-en="Contact Me">تواصل معي</a>
+        </div>
+        <div class="quick-skills"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Python</span><span>Flask</span><span>Flutter</span></div>
+      </div>
+      <div class="hero-art" aria-label="Web development illustration">
+        <div class="code-window">
+          <div class="window-top"><span></span><span></span><span></span><b>my-portfolio</b></div>
+          <div class="code-lines" aria-hidden="true">
+            <p><span class="code-purple">const</span> developer = {</p>
+            <p class="indent"><span class="code-green">name</span>: <span class="code-orange">'Ayman Radwan'</span>,</p>
+            <p class="indent"><span class="code-green">focus</span>: <span class="code-orange">'Web Development'</span>,</p>
+            <p class="indent"><span class="code-green">learning</span>: [</p>
+            <p class="indent2"><span class="code-orange">'JavaScript'</span>, <span class="code-orange">'Python'</span></p>
+            <p class="indent">]</p><p>};</p><p class="code-comment">// Learn. Build. Improve.</p>
+          </div>
+          <div class="code-badge">&lt;/&gt;</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-wrap about-section">
+      <div class="section-heading"><p class="eyebrow" data-ar="نبذة تعريفية" data-en="A LITTLE ABOUT ME">نبذة تعريفية</p><h2 data-ar="أحب تحويل الأفكار إلى مشروعات عملية" data-en="I enjoy turning ideas into practical projects">أحب تحويل الأفكار إلى مشروعات عملية</h2></div>
+      <div class="about-content">
+        <p data-ar="أنا أيمن رضوان، أتعلم تطوير الويب من خلال بناء صفحات وتطبيقات صغيرة وتطويرها باستمرار. أهتم بكتابة كود منظم، وتصميم واجهات سهلة الاستخدام، وفهم طريقة عمل المشروع من الواجهة إلى الخلفية." data-en="I'm Ayman Radwan, learning web development by building and improving practical websites and applications. I care about organized code, user-friendly interfaces, and understanding how projects work from front end to back end.">أنا أيمن رضوان، أتعلم تطوير الويب من خلال بناء صفحات وتطبيقات صغيرة وتطويرها باستمرار. أهتم بكتابة كود منظم، وتصميم واجهات سهلة الاستخدام، وفهم طريقة عمل المشروع من الواجهة إلى الخلفية.</p>
+        <div class="about-facts"><div><strong>01</strong><span data-ar="التعلم بالممارسة" data-en="Learning by doing">التعلم بالممارسة</span></div><div><strong>02</strong><span data-ar="حل المشكلات" data-en="Problem solving">حل المشكلات</span></div><div><strong>03</strong><span data-ar="التطوير المستمر" data-en="Continuous improvement">التطوير المستمر</span></div></div>
+      </div>
+    </section>
+
+    <section id="skills" class="section skills-section">
+      <div class="section-heading centered"><p class="eyebrow" data-ar="ما أستخدمه وأتعلمه" data-en="TOOLS & TECHNOLOGIES">ما أستخدمه وأتعلمه</p><h2 data-ar="مهاراتي التقنية" data-en="Technical Skills">مهاراتي التقنية</h2><p data-ar="تقنيات أطبّقها في مشروعاتي وأواصل تطوير مستواي فيها." data-en="Technologies I use in my projects and continue to improve.">تقنيات أطبّقها في مشروعاتي وأواصل تطوير مستواي فيها.</p></div>
+      <div class="skills-grid">
+        <article class="skill-card"><span class="skill-icon">5</span><h3>HTML5</h3><p data-ar="بناء هيكل الصفحات ومحتواها." data-en="Structuring web pages and content.">بناء هيكل الصفحات ومحتواها.</p></article>
+        <article class="skill-card"><span class="skill-icon">#</span><h3>CSS3</h3><p data-ar="تنسيق الواجهات وتصميم صفحات متجاوبة." data-en="Styling interfaces and responsive layouts.">تنسيق الواجهات وتصميم صفحات متجاوبة.</p></article>
+        <article class="skill-card"><span class="skill-icon">JS</span><h3>JavaScript</h3><p data-ar="إضافة التفاعل والمنطق إلى صفحات الويب." data-en="Adding interaction and logic to web pages.">إضافة التفاعل والمنطق إلى صفحات الويب.</p></article>
+        <article class="skill-card"><span class="skill-icon">Py</span><h3>Python</h3><p data-ar="كتابة البرامج والتعامل مع البيانات." data-en="Programming and working with data.">كتابة البرامج والتعامل مع البيانات.</p></article>
+        <article class="skill-card"><span class="skill-icon">Fl</span><h3>Flask</h3><p data-ar="التعرف على بناء تطبيقات ويب باستخدام Python." data-en="Exploring web applications with Python.">التعرف على بناء تطبيقات ويب باستخدام Python.</p></article>
+        <article class="skill-card"><span class="skill-icon">F</span><h3>Flutter</h3><p data-ar="التعرف على تطوير تطبيقات الهاتف." data-en="Exploring mobile app development.">التعرف على تطوير تطبيقات الهاتف.</p></article>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+      <div class="section-heading centered"><p class="eyebrow" data-ar="أعمال مختارة" data-en="SELECTED WORK">أعمال مختارة</p><h2 data-ar="مشروعاتي" data-en="My Projects">مشروعاتي</h2><p data-ar="تصفح مستودعات الكود للتعرف على تفاصيل التنفيذ والملفات." data-en="Visit the source repositories to explore the implementation and files.">تصفح مستودعات الكود للتعرف على تفاصيل التنفيذ والملفات.</p></div>
+      <div class="projects-grid">
+        <article class="project-card"><div class="project-top"><span class="project-index">01</span><span class="project-type">Python · Flask</span></div><h3 data-ar="نظام إدارة الطلاب" data-en="Student Management System">نظام إدارة الطلاب</h3><p data-ar="مشروع لإدارة بيانات الطلاب. افتح المستودع لمراجعة الكود والملفات المتاحة." data-en="A student management project. Open the repository to review its available source code and files.">مشروع لإدارة بيانات الطلاب. افتح المستودع لمراجعة الكود والملفات المتاحة.</p><div class="project-tags"><span>Python</span><span>Flask</span><span>HTML</span></div><a class="project-link" href="https://github.com/aymanabdalla360-glitch/flask-student-management" target="_blank" rel="noopener noreferrer"><span data-ar="عرض المستودع" data-en="View Repository">عرض المستودع</span><span aria-hidden="true">↗</span></a></article>
+        <article class="project-card"><div class="project-top"><span class="project-index">02</span><span class="project-type">Python · Flask</span></div><h3 data-ar="مشروع Flask" data-en="Flask Project">مشروع Flask</h3><p data-ar="مشروع برمجي باستخدام Flask. تفضل بزيارة المستودع للاطلاع على الملفات والتفاصيل." data-en="A project built with Flask. Visit the repository to explore the files and details.">مشروع برمجي باستخدام Flask. تفضل بزيارة المستودع للاطلاع على الملفات والتفاصيل.</p><div class="project-tags"><span>Python</span><span>Flask</span><span>Web</span></div><a class="project-link" href="https://github.com/aymanabdalla360-glitch/flask-project2" target="_blank" rel="noopener noreferrer"><span data-ar="عرض المستودع" data-en="View Repository">عرض المستودع</span><span aria-hidden="true">↗</span></a></article>
+        <article class="project-card"><div class="project-top"><span class="project-index">03</span><span class="project-type">Front End</span></div><h3 data-ar="مشروع تصميم موقع" data-en="Website Project">مشروع تصميم موقع</h3><p data-ar="مشروع ويب إضافي يعرض تطبيقًا عمليًا لتقنيات الواجهة الأمامية." data-en="An additional web project demonstrating front-end technologies in practice.">مشروع ويب إضافي يعرض تطبيقًا عمليًا لتقنيات الواجهة الأمامية.</p><div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a class="project-link" href="https://github.com/aymanabdalla360-glitch/my-website" target="_blank" rel="noopener noreferrer"><span data-ar="عرض المستودع" data-en="View Repository">عرض المستودع</span><span aria-hidden="true">↗</span></a></article>
+      </div>
+      <div class="github-callout"><div><h3 data-ar="المزيد من الكود على GitHub" data-en="More code on GitHub">المزيد من الكود على GitHub</h3><p data-ar="تابع حسابي للاطلاع على مشروعاتي وتحديثاتي." data-en="Visit my profile to explore projects and updates.">تابع حسابي للاطلاع على مشروعاتي وتحديثاتي.</p></div><a class="btn primary" href="https://github.com/aymanabdalla360-glitch" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+    </section>
+
+    <section id="contact" class="section section-wrap contact-section">
+      <div class="contact-panel"><p class="eyebrow" data-ar="لنتواصل" data-en="GET IN TOUCH">لنتواصل</p><h2 data-ar="هل لديك مشروع أو فرصة مناسبة؟" data-en="Have a project or opportunity?">هل لديك مشروع أو فرصة مناسبة؟</h2><p data-ar="يسعدني التواصل بشأن فرص العمل أو التعاون في مشروعات تطوير الويب." data-en="I'd be glad to connect about job opportunities or web development collaborations.">يسعدني التواصل بشأن فرص العمل أو التعاون في مشروعات تطوير الويب.</p>
+        <div class="contact-actions"><a class="btn primary" href="mailto:aymanabdalla360@gmail.com" data-ar="راسلني عبر البريد" data-en="Email Me">راسلني عبر البريد</a><a class="btn secondary" href="https://www.linkedin.com/in/ayman-abd-1b1114440" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn secondary" href="https://github.com/aymanabdalla360-glitch" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+        <p class="email-line"><a href="mailto:aymanabdalla360@gmail.com">aymanabdalla360@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><p>© <span id="year"></span> Ayman Radwan. <span data-ar="جميع الحقوق محفوظة." data-en="All rights reserved.">جميع الحقوق محفوظة.</span></p><a href="#home" data-ar="العودة للأعلى ↑" data-en="Back to top ↑">العودة للأعلى ↑</a></footer>
 </body>
 </html>
