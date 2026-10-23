@@ -518,3 +518,238 @@ button:focus-visible {
         padding: 23px;
     }
 }
+
+/* ===== توافق التنسيق مع index.html ===== */
+
+.hero-content .eyebrow,
+.section .eyebrow,
+.contact-section .eyebrow {
+    color: #668574;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.hero-visual {
+    min-width: 0;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: linear-gradient(145deg, #ffffff, #edf3ed);
+    border: 1px solid #e1e7e1;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+.visual-card {
+    width: 100%;
+    padding: 28px 20px;
+    background: #ffffff;
+    border: 1px solid #e1e7e1;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.visual-symbol {
+    display: inline-block;
+    color: #668574;
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.visual-card h2 {
+    color: #405b4b;
+    font-size: 25px;
+    overflow-wrap: anywhere;
+}
+
+.visual-card p {
+    color: #68746d;
+    margin-top: 10px;
+}
+
+.hero-buttons .btn.primary {
+    background: #668574;
+    color: #ffffff;
+    border-color: #668574;
+}
+
+.hero-buttons .btn.primary:hover {
+    background: #496654;
+}
+
+.hero-buttons .btn.secondary {
+    background: transparent;
+    color: #496654;
+    border-color: #a9c0ae;
+}
+
+.hero-buttons .btn.secondary:hover {
+    background: #edf3ed;
+}
+
+.section h2,
+.contact-section h2 {
+    color: #354b3d;
+    font-size: clamp(26px, 3vw, 34px);
+    margin-bottom: 18px;
+}
+
+.section-text {
+    max-width: 800px;
+    color: #68746d;
+    margin: 0 auto 30px;
+}
+
+#about .section-text,
+#projects > .section-text {
+    text-align: center;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.skill-card {
+    background: #ffffff;
+    border: 1px solid #e1e7e1;
+    border-radius: 16px;
+    padding: 25px;
+    transition: 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.skill-card h3 {
+    color: #496654;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #68746d;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card {
+    background: #ffffff;
+    border: 1px solid #e1e7e1;
+    border-radius: 16px;
+    padding: 25px;
+    min-width: 0;
+    transition: 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.project-number {
+    color: #668574;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.project-card h3 {
+    color: #405b4b;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.project-card p {
+    color: #68746d;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 18px;
+}
+
+.project-tags span,
+.skills-list span {
+    display: inline-block;
+    background: #edf3ed;
+    color: #496654;
+    border: 1px solid #dce7dc;
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+.project-status {
+    align-self: flex-start;
+    display: inline-block;
+    width: fit-content;
+    background: #f1f5ef;
+    color: #496654 !important;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 13px !important;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 25px;
+}
+
+.contact-section {
+    text-align: center;
+    background: #edf2ec;
+    border-top: 1px solid #e1e7e1;
+}
+
+.contact-section .section-text,
+.contact-note {
+    color: #68746d;
+}
+
+@media (max-width: 800px) {
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero .container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 550px) {
+    .skill-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .visual-card h2 {
+        font-size: 21px;
+    }
+
+    .section h2,
+    .contact-section h2 {
+        font-size: 26px;
+    }
+}
+
