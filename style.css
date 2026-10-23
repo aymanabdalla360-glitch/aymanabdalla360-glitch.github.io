@@ -604,3 +604,9 @@ footer p {
         flex-direction: column;
     }
 }
+.project-card a.btn {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    cursor: pointer;
+}
