@@ -8,22 +8,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const translatableElements = document.querySelectorAll("[data-ar][data-en]");
 
   function setLanguage(language) {
-  const safeLanguage = language === "en" ? "en" : "ar";
+    const safeLanguage = language === "en" ? "en" : "ar";
+    document.documentElement.lang = safeLanguage;
+    document.documentElement.dir = safeLanguage === "ar" ? "rtl" : "ltr";
 
-  document.documentElement.lang = safeLanguage;
-  document.documentElement.dir = safeLanguage === "ar" ? "rtl" : "ltr";
+    translatableElements.forEach((element) => {
+      const translated = safeLanguage === "ar" ? element.dataset.ar : element.dataset.en;
+      // Only headings whose translation intentionally contains inline <span> markup
+      // should be parsed as HTML. Ordinary text is inserted safely as text.
+      if (translated.includes("<span") && translated.includes("</span>")) {
+        element.innerHTML = translated;
+      } else {
+        element.textContent = translated;
+      }
+    });
 
-  document.querySelectorAll("[data-ar][data-en]").forEach((element) => {
-    element.innerHTML =
-      safeLanguage === "ar"
-        ? element.dataset.ar
-        : element.dataset.en;
-  });
-
-  if (languageToggle) {
-    languageToggle.textContent = safeLanguage === "ar" ? "EN" : "عربي";
-  }
-}
+    if (languageToggle) {
+      languageToggle.textContent = safeLanguage === "ar" ? "EN" : "عربي";
+      languageToggle.setAttribute(
+        "aria-label",
+        safeLanguage === "ar" ? "Switch to English" : "التغيير إلى العربية"
+      );
+    }
 
     try {
       localStorage.setItem("portfolio-language", safeLanguage);
@@ -75,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("main section[id]");
   const navLinks = document.querySelectorAll("#mainNav a[href^='#']");
 
-  if ("IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window && sections.length && navLinks.length) {
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
