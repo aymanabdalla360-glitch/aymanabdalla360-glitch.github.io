@@ -252,3 +252,43 @@ html[lang="en"] .contact-links { text-align: left; }
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+
+/* Compatibility fixes: hero heading, project metadata, and contact text */
+.hero h1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.22em;
+  row-gap: 0.04em;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.hero h1 > span { display: inline-block; }
+.gradient-text {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  background-image: linear-gradient(90deg, #86efac, #22c55e 60%, #bbf7d0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.project-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 5px;
+}
+.project-meta > span { display: inline-block; }
+.contact-card { min-width: 0; }
+.contact-value {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+@media (max-width: 600px) {
+  .hero h1 { column-gap: 0.18em; letter-spacing: -0.5px; }
+  .project-meta { align-items: flex-start; }
+}
