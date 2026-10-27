@@ -8,22 +8,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const translatableElements = document.querySelectorAll("[data-ar][data-en]");
 
   function setLanguage(language) {
-    const safeLanguage = language === "en" ? "en" : "ar";
-    document.documentElement.lang = safeLanguage;
-    document.documentElement.dir = safeLanguage === "ar" ? "rtl" : "ltr";
+  const safeLanguage = language === "en" ? "en" : "ar";
 
-    translatableElements.forEach((element) => {
-      // data-* may contain simple inline markup such as highlighted heading spans.
-      element.innerHTML = safeLanguage === "ar" ? element.dataset.ar : element.dataset.en;
-    });
+  document.documentElement.lang = safeLanguage;
+  document.documentElement.dir = safeLanguage === "ar" ? "rtl" : "ltr";
 
-    if (languageToggle) {
-      languageToggle.textContent = safeLanguage === "ar" ? "EN" : "عربي";
-      languageToggle.setAttribute(
-        "aria-label",
-        safeLanguage === "ar" ? "Switch to English" : "التغيير إلى العربية"
-      );
-    }
+  document.querySelectorAll("[data-ar][data-en]").forEach((element) => {
+    element.innerHTML =
+      safeLanguage === "ar"
+        ? element.dataset.ar
+        : element.dataset.en;
+  });
+
+  if (languageToggle) {
+    languageToggle.textContent = safeLanguage === "ar" ? "EN" : "عربي";
+  }
+}
 
     try {
       localStorage.setItem("portfolio-language", safeLanguage);
