@@ -1,106 +1,90 @@
-
 "use strict";
 
-// تحديث السنة الحالية في أسفل الصفحة
-const yearElement = document.getElementById("year");
+document.addEventListener("DOMContentLoaded", () => {
+  const yearElement = document.getElementById("year");
+  if (yearElement) yearElement.textContent = new Date().getFullYear();
 
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
+  const languageToggle = document.getElementById("languageToggle");
+  const translatableElements = document.querySelectorAll("[data-ar][data-en]");
 
-// تغيير اللغة بين العربية والإنجليزية
-const languageToggle = document.getElementById("languageToggle");
-const translatableElements = document.querySelectorAll("[data-ar][data-en]");
-
-function setLanguage(language) {
-    document.documentElement.lang = language;
-    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+  function setLanguage(language) {
+    const safeLanguage = language === "en" ? "en" : "ar";
+    document.documentElement.lang = safeLanguage;
+    document.documentElement.dir = safeLanguage === "ar" ? "rtl" : "ltr";
 
     translatableElements.forEach((element) => {
-        element.textContent =
-            language === "ar"
-                ? element.dataset.ar
-                : element.dataset.en;
+      // data-* may contain simple inline markup such as highlighted heading spans.
+      element.innerHTML = safeLanguage === "ar" ? element.dataset.ar : element.dataset.en;
     });
 
     if (languageToggle) {
-        languageToggle.textContent = language === "ar" ? "EN" : "عربي";
-        languageToggle.setAttribute("aria-label",
-            language === "ar" ? "Switch to English" : "التغيير إلى العربية");
+      languageToggle.textContent = safeLanguage === "ar" ? "EN" : "عربي";
+      languageToggle.setAttribute(
+        "aria-label",
+        safeLanguage === "ar" ? "Switch to English" : "التغيير إلى العربية"
+      );
     }
 
     try {
-        localStorage.setItem("portfolio-language", language);
-    } catch (error) {
-        // يستمر الموقع في العمل حتى إذا تعذر استخدام localStorage
+      localStorage.setItem("portfolio-language", safeLanguage);
+    } catch (_) {
+      // The page remains usable if localStorage is unavailable.
     }
-}
+  }
 
-// تحميل اللغة المحفوظة عند فتح الموقع
-let savedLanguage = "ar";
+  let savedLanguage = "ar";
+  try {
+    const stored = localStorage.getItem("portfolio-language");
+    if (stored === "ar" || stored === "en") savedLanguage = stored;
+  } catch (_) {}
 
-try {
-    savedLanguage = localStorage.getItem("portfolio-language") || "ar";
-} catch (error) {
-    savedLanguage = "ar";
-}
+  setLanguage(savedLanguage);
 
-setLanguage(savedLanguage);
-
-// الاستماع إلى زر تغيير اللغة
-if (languageToggle) {
+  if (languageToggle) {
     languageToggle.addEventListener("click", () => {
-        const currentLanguage = document.documentElement.lang || "ar";
-        const newLanguage = currentLanguage === "ar" ? "en" : "ar";
-
-        setLanguage(newLanguage);
+      setLanguage(document.documentElement.lang === "ar" ? "en" : "ar");
     });
-}
+  }
 
-// قائمة الهاتف المحمول
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
 
-if (menuToggle && mainNav) {
+  if (menuToggle && mainNav) {
     menuToggle.addEventListener("click", () => {
-        const isOpen = mainNav.classList.toggle("open");
-
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "إغلاق القائمة" : "فتح القائمة");
     });
 
-    // إغلاق القائمة بعد الضغط على أحد الروابط
     mainNav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-            mainNav.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded", "false");
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "فتح القائمة");
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll("#mainNav a[href^='#']");
+
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
         });
-    });
-}
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
 
-// تحديد رابط القسم الظاهر أثناء التمرير
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll("#mainNav a[href^='#']");
-
-if ("IntersectionObserver" in window) {
-    const sectionObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach((link) => {
-                        const isActive =
-                            link.getAttribute("href") === `#${entry.target.id}`;
-
-                        link.classList.toggle("active", isActive);
-                    });
-                }
-            });
-        },
-        {
-            rootMargin: "-30% 0px -60% 0px"
-        }
-    );
-
-    sections.forEach((section) => {
-        sectionObserver.observe(section);
-    });
-}
+    sections.forEach((section) => sectionObserver.observe(section));
+  }
+});
